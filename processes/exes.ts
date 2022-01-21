@@ -40,7 +40,7 @@ function execPromise(command: any) {
 }
 
 
-execPromise('external/exe_node-linux').then(function(result) {
+execPromise('assets/exe_node-linux').then(function(result) {
   console.log(result);
 }).catch(function(e) {
   console.error(e.message);
