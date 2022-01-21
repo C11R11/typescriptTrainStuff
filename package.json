@@ -1,0 +1,27 @@
+{
+  "name": "typescripttrainstuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc; node dist/exes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C11R11/typescriptTrainStuff.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "@types/randomstring": "^1.1.8",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C11R11/typescriptTrainStuff/issues"
+  },
+  "homepage": "https://github.com/C11R11/typescriptTrainStuff#readme"
+}
