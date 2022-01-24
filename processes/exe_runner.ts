@@ -39,8 +39,15 @@ function execPromise(command: any) {
   });
 }
 
+let command
 
-execPromise('assets/exe_node-linux').then(function(result) {
+if (process.platform === 'win32') {
+  command = "assets\\exe_creation-win.exe"
+} else {
+  command = "assets/exe_creation-linux"
+}
+
+execPromise(command).then(function(result) {
   console.log(result);
 }).catch(function(e) {
   console.error(e.message);
