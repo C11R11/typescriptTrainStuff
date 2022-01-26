@@ -1,5 +1,4 @@
 import * as express from "express";
-import * as socketio from "socket.io";
 import * as path from "path";
 
 const app = express();
@@ -17,7 +16,7 @@ app.get("/", (req: any, res: any) => {
 io.on("connection", function(socket: any) {
     console.log("a user connected");
     socket.emit("hello", "world");
-    socket.broadcast.emit("user connected", {
+    socket.emit("info", {
         userID: socket.id,
         username: socket.username,
       });
@@ -25,12 +24,9 @@ io.on("connection", function(socket: any) {
       console.log("New message -> " + message);
       // echo the message back down the
       // websocket connection
-      socket.emit("mess", "world");
+      socket.broadcast.emit("server-reply", "->" + message );
     });
   });
-
-
-  
 
 const server = http.listen(3000, function() {
   console.log("listening on *:3000");

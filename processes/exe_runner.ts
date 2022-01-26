@@ -5,52 +5,52 @@ const { spawn, exec } = require('child_process');
 {
   return new Promise<void>(async function (resolve) {
 
-    const ls = spawn('external/exe_node-linux');
+	const ls = spawn('external/exe_node-linux');
  
-    ls.stdout.on('data', (data: any) => {
-      console.log(`stdout: ${data}`);
-    });
+	ls.stdout.on('data', (data: any) => {
+	  console.log(`stdout: ${data}`);
+	});
     
-    ls.stderr.on('data', (data: any) => {
-      console.log(`stderr: ${data}`);
-    });
+	ls.stderr.on('data', (data: any) => {
+	  console.log(`stderr: ${data}`);
+	});
 
-    ls.on('exit', (code: any) => {
-      console.log(`Exit code is: ${code}`);
-      resolve()
-    });
+	ls.on('exit', (code: any) => {
+	  console.log(`Exit code is: ${code}`);
+	  resolve()
+	});
   })
 } 
 
 async() => await x();*/
 
 function execPromise(command: any) {
-  return new Promise(function(resolve, reject) {
-      exec(command, (error: any, stdout: string, stderr: any) => {
-          if (error) {
-              reject(error);
-              return;
-          }
+	return new Promise(function (resolve, reject) {
+		exec(command, (error: any, stdout: string, stderr: any) => {
+			if (error) {
+				reject(error);
+				return;
+			}
 
-          console.log("awefefe")
+			console.log("awefefe")
 
-          resolve(stdout.trim());
-      });
-  });
+			resolve(stdout.trim());
+		});
+	});
 }
 
 let command
 
 if (process.platform === 'win32') {
-  command = "assets\\exe_creation-win.exe"
+	command = "assets\\exe_creation-win.exe"
 } else {
-  command = "assets/exe_creation-linux"
+	command = "assets/exe_creation-linux"
 }
 
-execPromise(command).then(function(result) {
-  console.log(result);
-}).catch(function(e) {
-  console.error(e.message);
+execPromise(command).then(function (result) {
+	console.log(result);
+}).catch(function (e) {
+	console.error(e.message);
 });
 
 
