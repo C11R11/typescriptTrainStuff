@@ -22,14 +22,14 @@ function FuncB()
 })
 }
 
-async function main()
-{
+//Immediately invoked function expression
+//https://en.wikipedia.org/wiki/Immediately_invoked_function_expression
+(async () => {
+    console.log("sync test")
     console.log("FuncA", await FuncA())
     console.log("FuncB", await FuncB())
-}
+})()
 
 
-console.log("sync test")
-main()
 
 
