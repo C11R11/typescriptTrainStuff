@@ -1,0 +1,36 @@
+import { Server } from "socket.io";
+
+const io = new Server({
+  // options
+});
+
+io.on("connection", function(socket: any) {
+    console.log("a user connected");
+    socket.emit("hello", "world");
+    socket.emit("info", {
+        userID: socket.id,
+        username: socket.username,
+      });
+    socket.on("message", function(message: any) {
+      console.log("New message -> " + message);
+      // echo the message back down the
+      // websocket connection
+      socket.broadcast.emit("server-reply", "->" + message );
+    });
+
+    socket.on("bye", function(message: any) {
+        console.log("bye meesage")
+        io.close()
+        process.exit();
+        return
+      });
+  });
+
+  io.on("close", function()
+  {
+    console.log("closing....")
+  })
+
+
+console.log("listen 3000")
+io.listen(3000);
