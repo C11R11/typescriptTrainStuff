@@ -104,3 +104,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Because is a typescript repo
+*.js
