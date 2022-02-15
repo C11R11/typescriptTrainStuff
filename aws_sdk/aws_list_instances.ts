@@ -1,13 +1,16 @@
-import {config, EC2} from 'aws-sdk';
+import {config, EC2, SharedIniFileCredentials} from 'aws-sdk';
 
 // Set the region 
 config.update({region: 'us-east-1'});
+
+var credentials = new SharedIniFileCredentials({profile: 'default'});
+config.credentials = credentials;
 
 // Create S3 service object
 const ec2 = new EC2({apiVersion: '2016-11-15'});
 
 var params = {
-  InstanceIds: ['i-0175bab06bd97e5e9'],
+ // InstanceIds: ['i-0175bab06bd97e5e9'],
   DryRun: false
 };
 
