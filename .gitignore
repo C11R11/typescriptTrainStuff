@@ -106,4 +106,3 @@ dist
 .tern-port
 
 # Because is a typescript repo
-*.js
