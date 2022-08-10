@@ -1,5 +1,5 @@
-import {createServer} from "http"
-import {SocketService} from "./SocketService";
+import {createServer, IncomingMessage, ServerResponse} from "http"
+import {SocketService,} from "./SocketService";
 
 /* 
   Create Server from http module.
@@ -8,7 +8,7 @@ import {SocketService} from "./SocketService";
   const server = require("http").Server(app);
 
 */
-const server = createServer((req: any, res: { write: (arg0: string) => void; end: () => void; }) => {
+const server = createServer((req: IncomingMessage, res: ServerResponse) => {
   res.write("Terminal Server Running.");
   res.end();
 });
