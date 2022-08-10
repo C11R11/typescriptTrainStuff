@@ -22,6 +22,11 @@ io.on("connection", function(socket: any) {
       socket.broadcast.emit("server-reply", "->" + message );
     });
 
+    socket.on("input", function(message: any) {
+      console.log("New input -> " + message);
+      socket.emit("output", "Proccesed :)");
+    });
+
     socket.on("bye", function(message: any) {
         console.log("bye meesage")
         io.close()
