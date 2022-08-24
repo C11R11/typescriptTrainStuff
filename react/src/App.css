@@ -1,0 +1,19 @@
+.Navigation
+{
+    background-color: antiquewhite;
+    float: left;
+}
+
+.MainContent
+{
+    background-color: antiquewhite;
+    float: left;
+    width: 800px;
+}
+
+#container
+{
+    display: flex;
+    min-height: 700px;
+}
+
