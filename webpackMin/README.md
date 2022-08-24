@@ -8,3 +8,7 @@ This is a project who:
 # Debts
 
 * Add templates and remove the index.html
+
+# info
+
+https://www.youtube.com/watch?v=FMNuTj89RzU
